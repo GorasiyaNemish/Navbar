@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+body{
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: auto;
+    overflow-x: hidden !important;
+}
+
+.leftUl,.rightUl{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    /* background: green; */
+}
+nav ul li , .hidden ul li{
+    padding: 1.6rem 1.5rem;
+}
+nav ul li:hover , .hidden ul li:hover{
+    background: #222;
+}
+nav a , .hidden ul li  a {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+#search { 
+    padding: 0;
+    height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#search:hover {
+    background: none;
+}
+.right .rightUl li input , .hidden ul li input{
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 20px;
+    height: auto;
+    color: white;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+.right .rightUl li i , .hidden i{
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#btn:hover { 
+    background: none;
+}
+.cross{
+    text-align: end;
+    padding: 1rem 2rem;
+}
+.hidden i{
+    align-self: flex-end;
+}
+.hidden ul li{
+    text-align: center;
+}
+.test {
+    /* overflow: scroll;
+    overflow-x: hidden;
+    padding: 10px;
+    height: calc(100vh - 80px); */
+}   
+
+dialog {
+    text-wrap: nowrap;
+    background:  black;
+    width: 0;
+    box-shadow: 0 5px 20px black;
+    top: 0%;
+    left: auto;
+    min-height: 100%;
+    animation: sidebar 0.2s linear forwards;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+}
+@keyframes sidebar {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 300px;
+    }
+}
+dialog::backdrop {
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(1px);
+}
+
+@media only screen and (max-width: 1150px) {
+    nav ul li , .hidden ul li{
+        padding: 1.4rem 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #leftnavdiv{
+        display: none;
+        background: yellowgreen;
+    }
+    #rightnavdiv #rightUl li:not(#btn) {
+        display: none;
+        background: blueviolet;
+    }
+    
+    .hidden ul li{
+        text-align: center;
+        /* width: 100vw; */
+    }
+    #btn{
+        width: 100vw;
+        background: black;
+        display: flex;
+        justify-content: end;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .cross{
+        padding: 1rem;
+    }
+    @keyframes sidebar {
+        0%{
+            min-width: 0;
+        }
+        100%{
+            min-width: 100%;
+        }
+    }
+}
